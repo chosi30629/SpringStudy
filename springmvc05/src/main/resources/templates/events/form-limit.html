@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Event</title>
+</head>
+<body>
+    <!-- th:action = @{요청 URI}, th:object = ${모델에 담긴 값 참조} th:field = *{th:object 의 변수} -->
+    <form action="#" th:action="@{/events/form/limit}" method="post" th:object="${event}">
+        <p th:if="${#fields.hasErrors('limit')}" th:errors="*{limit}">Incorrect date</p>
+        Limit: <input type="text" title="name" th:field="*{limit}"/>
+        <input type="submit" value="Create"/>
+    </form>
+</body>
+</html>
